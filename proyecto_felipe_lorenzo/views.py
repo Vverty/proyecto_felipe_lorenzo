@@ -26,7 +26,7 @@ def mi_nombre_es(self, nombre):
   
 def probandoTemplate(self):
 
-    miHtml = open("H:\Mi unidad\DATA Vverty\Coderhouse\Python\proyecto_python_coder\proyecto_felipe_lorenzo\proyecto_felipe_lorenzo\index.html")
+    miHtml = open("H:\Mi unidad\DATA Vverty\Coderhouse\Python\proyecto_python_coder\proyecto_felipe_lorenzo\proyecto_felipe_lorenzo\plantillas\index.html")
 
     plantilla = Template(miHtml.read()) #Se carga en memoria nuestro documento, template1   
     ##OJO importar template y contex, con: from django.template import Template, Context
