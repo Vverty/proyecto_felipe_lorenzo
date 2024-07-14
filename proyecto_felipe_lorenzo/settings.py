@@ -54,7 +54,7 @@ ROOT_URLCONF = 'proyecto_felipe_lorenzo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./proyecto_felipe_lorenzo/plantillas/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

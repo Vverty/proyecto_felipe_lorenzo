@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from datetime import datetime 
 from django.template import Template, Context
+from django.template import loader
 
 def saludo(request):
 	return HttpResponse('Hola Django - Coder')
@@ -25,6 +26,13 @@ def mi_nombre_es(self, nombre):
       return HttpResponse(documentoDeTexto)
   
 def probandoTemplate(self):
+    
+    nombre = "Felipe"
+    apellido = "Melo"
+    diccionario = {
+        "nombre": nombre, 
+        "apellido": apellido, 
+        "notas": [4, 8, 9, 10, 7, 8]}
 
     miHtml = open("./proyecto_felipe_lorenzo/plantillas/index.html")
 
@@ -33,8 +41,21 @@ def probandoTemplate(self):
 
     miHtml.close() #Cerramos el archivo
 
-    miContexto = Context() #EN este caso no hay nada ya que no hay parametros, IGUAL hay que crearlo
+    miContexto = Context(diccionario) #EN este caso no hay nada ya que no hay parametros, IGUAL hay que crearlo
 
     documento = plantilla.render(miContexto) #Aca renderizamos la plantilla en documento
 
+    return HttpResponse(documento)
+
+def usando_loader(request):
+    nombre = "Felipe"
+    apellido = "Lorenzo"
+    
+    diccionario = {
+        "nombre": nombre,
+        "apellido": apellido,
+        "notas": [4, 8, 9, 10, 7, 8]
+    }
+    plantilla = loader.get_template('index.html')
+    documento = plantilla.render(diccionario)
     return HttpResponse(documento)
