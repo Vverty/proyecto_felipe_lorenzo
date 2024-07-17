@@ -7,3 +7,18 @@ def curso(request, nombre, numero):
     curso.save()
     documento = f"Curso: {curso.nombre}<br>Camada: {curso.camada}"
     return HttpResponse(documento)
+
+def inicio(request):
+    return HttpResponse("Vista inicio")
+
+def cursos(request):
+    return HttpResponse("Vista cursos")
+
+def profesores(request):
+    return HttpResponse("Vista profesores")
+
+def estudiantes(request):
+    return HttpResponse("Vista estudiantes")
+
+def entregables(request):
+    return HttpResponse("Vista entregables")
