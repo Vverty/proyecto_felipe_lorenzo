@@ -9,7 +9,7 @@ def curso(request, nombre, numero):
     return HttpResponse(documento)
 
 def inicio(request):
-    return HttpResponse("Vista inicio")
+    return render(request, "AppCoder/index.html")
 
 def cursos(request):
     return HttpResponse("Vista cursos")
